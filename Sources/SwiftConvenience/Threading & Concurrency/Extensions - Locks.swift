@@ -30,6 +30,7 @@ extension NSLocking {
     }
 }
 
+@available(macOS 10.12, *)
 extension os_unfair_lock {
     public mutating func withLock<R>(_ body: () throws -> R) rethrows -> R {
         os_unfair_lock_lock(&self)
