@@ -43,7 +43,7 @@ public struct SynchronousExecutor {
             group.leave()
         }
         
-        if let timeout {
+        if timeout {
             guard group.wait(timeout: .now() + timeout) == .success else {
                 throw CommonError.timedOut(what: name ?? "Operation")
             }
